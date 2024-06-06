@@ -278,7 +278,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   display: block;
 }
 .banner p {
-color: #cac5c5; 
+color: white; 
  font-size: 18px;
   letter-spacing: 0.8px;
   line-height: 1.5em;
@@ -303,22 +303,22 @@ color: #cac5c5;
   margin-left: 25px;
 }
 .banner img {
-  animation: updown 3s linear infinite;
+  animation: updown 6s linear infinite; /*this line for solwing the animation */
   border-radius: 50%;
-  width:400px;
-  height: 500px;
+  width:300px;
+  height: 400px;
    /* transform: translateY(-20%);  */
 
 }
  @keyframes updown {
     0% {
-        transform: translateY(-5px);
+        transform: translateY(-70px);
     }
     50% {
         transform: translateY(-90px);
     }
     100% {
-        transform: translateY(-5px);
+        transform: translateY(-70px);
     }
 } 
 .txt-rotate > .wrap {
@@ -344,7 +344,7 @@ color: #cac5c5;
 	font-weight: 700;
 }
 .skill p {
-    color: #B8B8B8;
+    color: white;
     font-size: 18px;
     letter-spacing: 0.8px;
     line-height: 1.5em;
@@ -376,13 +376,19 @@ color: #cac5c5;
   /* background-image: url('./assets/img/4.png');  */
   /* here backgourd */
 }
+.tabpane .list-content {
+    text-align: left;
+    white-space: pre-line;
+    margin: 0;
+    padding: 0;
+}
 .project h2 {
 	font-size: 45px;
 	font-weight: 700;
   text-align: center;
 }
 .project p {
-  color: #cac5c5;
+  color: white;
   font-size: 18px;
   letter-spacing: 0.8px;
   line-height: 1.5em;
