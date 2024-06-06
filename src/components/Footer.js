@@ -21,7 +21,7 @@ export const Footer = () => {
 
            
             </div>
-            <p>© Tal kehila | portfolio..</p>
+            <p>© Tal kehila | portfolio...</p>
           </Col>
         </Row>
       </Container>
