@@ -38,6 +38,11 @@ export const Projects = () => {
       description: "Note-taking application",
       imgUrl: Note,
     },
+    {
+      title: "Personal news Fetcher",
+      description: "Sending email to the user by the prefrences he likes",
+      imgUrl: Note,
+    },
   ];
 
   return (
@@ -47,59 +52,59 @@ export const Projects = () => {
           <Col size={12}>
             <TrackVisibility>
               {({ isVisible }) =>
-              <div className={isVisible ? "animate__animated animate__fadeIn": ""}>
-                <h2>Projects</h2>
-                <p></p>
-                <Tab.Container id="projects-tabs" defaultActiveKey="first">
-                  <Nav variant="pills" className="nav-pills mb-5 justify-content-center align-items-center" id="pills-tab">
-                    <Nav.Item>
-                      <Nav.Link eventKey="first">Project</Nav.Link>
-                    </Nav.Item>
-                    <Nav.Item>
-                      <Nav.Link eventKey="second">Technologies</Nav.Link>
-                    </Nav.Item>
-                    <Nav.Item>
+                <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
+                  <h2>Projects</h2>
+                  <p></p>
+                  <Tab.Container id="projects-tabs" defaultActiveKey="first">
+                    <Nav variant="pills" className="nav-pills mb-5 justify-content-center align-items-center" id="pills-tab">
+                      <Nav.Item>
+                        <Nav.Link eventKey="first">Project</Nav.Link>
+                      </Nav.Item>
+                      <Nav.Item>
+                        <Nav.Link eventKey="second">Technologies</Nav.Link>
+                      </Nav.Item>
+                      <Nav.Item>
                         <Nav.Link eventKey="third">Challenges</Nav.Link>
-                    </Nav.Item>
-                  </Nav>
-                  <Tab.Content id="slideInUp" className={isVisible ? "animate__animated animate__slideInUp" : ""}>
-                    <Tab.Pane eventKey="first">
-                      <Row>
-                        {
-                          projects.map((project, index) => {
-                            return (
-                              <ProjectCard
-                                key={index}
-                                {...project}
+                      </Nav.Item>
+                    </Nav>
+                    <Tab.Content id="slideInUp" className={isVisible ? "animate__animated animate__slideInUp" : ""}>
+                      <Tab.Pane eventKey="first">
+                        <Row>
+                          {
+                            projects.map((project, index) => {
+                              return (
+                                <ProjectCard
+                                  key={index}
+                                  {...project}
                                 />
-                            )
-                          })
-                        }
-                      </Row>
-                    </Tab.Pane>
-                    <Tab.Pane eventKey="second" className="tabpane">
-                      <p>
+                              )
+                            })
+                          }
+                        </Row>
+                      </Tab.Pane>
+                      <Tab.Pane eventKey="second" className="tabpane">
+                        <p>
                           * .NET with binary tree data storage and WPF for UI.
-                      </p>
-                      <p>
+                        </p>
+                        <p>
                           * Angular, Node.js with JWT, and Socket.io  in the to-do project.
-                      </p>
-                      <p>
+                        </p>
+                        <p>
                           * React for the note app.
-                      </p>
-                      <p>
+                        </p>
+                        <p>
                           * WinForms in C# for  library system, employing OOP and file storage.
-                      </p>
-                      <p>
+                        </p>
+                        <p>
                           *.NET Core with MVC and RESTful API for the pet web store.
-                      </p>                 
-                    </Tab.Pane>
-                    <Tab.Pane eventKey="third">
+                        </p>
+                      </Tab.Pane>
+                      <Tab.Pane eventKey="third">
                         <p>Challenges: During each project there were other challenges that I was able to overcome and solve with the help of tolerance and troubleshooting, teamwork and a lot of self-learning.</p>
-                    </Tab.Pane>
-                  </Tab.Content>
-                </Tab.Container>
-              </div>}
+                      </Tab.Pane>
+                    </Tab.Content>
+                  </Tab.Container>
+                </div>}
             </TrackVisibility>
           </Col>
         </Row>
