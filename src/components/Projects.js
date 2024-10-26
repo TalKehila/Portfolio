@@ -5,7 +5,7 @@ import Box from "../assets/img/box.jpg";
 import Pet from "../assets/img/pet2.jpg";
 import Note from "../assets/img/mynote.jpg";
 import Library from "../assets/img/lib2.jpg";
-import news from "../assets/img/paper.jpeg"
+import news from "../assets/img/pkk.jpeg"
 
 
 import 'animate.css';
