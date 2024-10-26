@@ -302,15 +302,26 @@ color: white;
 .banner button:hover svg {
   margin-left: 25px;
 }
+
+
+
+
+/* moving up and down the photo  */
+
+
 .banner img {
-  animation: updown 6s linear infinite; /*this line for solwing the animation */
+  /*animation: updown 6s linear infinite; /*this line for solwing the animation */
   border-radius: 50%;
   width:300px;
   height: 400px;
    /* transform: translateY(-20%);  */
 
 }
- @keyframes updown {
+
+/* moving up and down the photo  */
+
+
+ /* @keyframes updown {
     0% {
         transform: translateY(-70px);
     }
@@ -320,7 +331,7 @@ color: white;
     100% {
         transform: translateY(-70px);
     }
-} 
+}  */
 .txt-rotate > .wrap {
   border-right: 0.08em solid #565454;
 }
