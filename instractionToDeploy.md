@@ -8,3 +8,7 @@
 *במקרה של פרויקט פורטפוליו – git push origin ghpages
 6. לאחר מכן ביצוע השינויים – npm run deploy 
 במידה ומשהו לא תקין יש לעשות לפני npm run build  ולאחר מכן שוב npm run deploy
+
+
+npm run build
+npm run deploy
