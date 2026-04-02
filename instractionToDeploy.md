@@ -12,3 +12,10 @@
 
 npm run build
 npm run deploy
+
+
+
+
+
+git reset --hard gh-pages
+git push origin gh-pages --force
