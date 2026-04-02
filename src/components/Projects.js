@@ -15,30 +15,47 @@ export const Projects = () => {
 
   const projects = [
     {
-      title: "Box Factory",
-      description: "Box factory using DS algorithms in .Net and WPF",
+      title: "Refrigeration & Chiller Monitoring System (mobile app and web) 2026",
+      description: "A refrigeration and chiller monitoring system that allows adding controllers, adjusting temperature settings, detecting faults, and sending real-time alerts via SMS and email. Includes a live dashboard displaying all system data and status in real time.",
       imgUrl: Box,
     },
+
+
     {
-      title: "Pet Web Store",
-      description: "Pet shop with RESTful API on MVC",
+      title: "C# Application with Docker and CI/CD (2025)",
+      description: "C# application containerized using Docker. Integrated with GitHub Actions, it provides automated CI/CD workflows for seamless deployment and continuous integration.",
       imgUrl: Pet,
     },
+
+
     {
-      title: "Library Desktop App",
+      title: "AWS multi region cloud application (2025-2026)",
       description: "Library management in WinForms",
       imgUrl: Library,
+      bullets: [
+        "Built a multi-region AWS architecture with independent game instances per region and failover-based traffic switching using EC2 and Fargate",
+        "Designed and provisioned infrastructure (VPC, networking, multi-AZ) using CloudFormation with focus on high availability",
+        "Configured users, roles, and permissions via AWS Organizations, SSO, and IAM following least privilege principles",
+        "Implemented storage using S3, databases, and NFS with versioning and immutability for resiliency",
+        "Set up monitoring and alerting with CloudWatch and SNS to track system health"
+      ]
     },
+
+
     {
-      title: "To Do List",
-      description: "Task management app in Angular",
+      title: "HVAC Control System with NASA Protocol (2025)",
+      description: "A control system built on NASA's protocol, connected to a Raspberry Pi controller. The application manages HVAC components such as evaporators and ventilators across multiple rooms, providing centralized and efficient climate control.",
       imgUrl: Todo,
     },
+
+
     {
-      title: "Notes",
-      description: "Note-taking application",
+      title: "thermostat touch screen ESP32 (2025)",
+      description: "A smart thermostat built with an ESP32 microcontroller, featuring a touch display using LVGL and GT911 touch controller, written in C/C++. The system allows real-time temperature monitoring and control through a responsive and intuitive user interface.",
       imgUrl: Note,
     },
+
+
     {
       title: "Personal news Fetcher",
       description: "Sending email to the user by the prefrences he likes",
