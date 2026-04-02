@@ -54,8 +54,11 @@ export const Banner = () => {
                     <span className="wrap">{text}</span>
                   </span>
                 </h2>
-                  <p>
-                    I build things that actually work — from backend services to embedded systems. I like figuring out how pieces fit together, whether that's integrating APIs, setting up a CI/CD pipeline, or getting an ESP32 to talk to a cloud dashboard. Still learning, always curious.</p>
+                <p>
+                  I build systems that work in the real world, from backend services to embedded devices.<br />
+                  I enjoy connecting the pieces, whether that means integrating APIs, setting up a CI/CD pipeline, or getting an ESP32 to send live data to the cloud.<br />
+                  I am always learning, always curious, and always trying to build things better than yesterday.
+                </p>
               </div>
           </Col>
         </Row>

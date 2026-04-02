@@ -50,12 +50,13 @@
 
 .banner p {
   color: white;
-  font-size: 18px;
+  font-size: 15px;
   letter-spacing: 0.8px;
-  line-height: 1.5em;
+  line-height: 1.9em;
   width: 100%;
   max-width: 760px;
   margin: 0 auto;
+  text-align: left;
 }
 
 .banner img {
@@ -85,6 +86,10 @@
 
   .banner .banner-role-line {
     font-size: clamp(1.1rem, 6vw, 1.45rem);
+  }
+
+  .banner p {
+    text-align: left;
   }
 }
 
