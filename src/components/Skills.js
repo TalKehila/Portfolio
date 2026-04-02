@@ -14,7 +14,12 @@ import net from '../assets/img/dotnet.svg'
 import az from '../assets/img/az.svg'
 import mgg from '../assets/img/mongo.svg'
 import dbsql from '../assets/img/dbsql.svg'
-import aws from '../assets/img/aws.png'
+import aws from '../assets/img/aws.svg'
+import github from '../assets/img/github.svg'
+import docker from '../assets/img/docker.svg'
+import vm from '../assets/img/vm.svg'
+
+
 
 
 
@@ -96,10 +101,18 @@ export const Skills = () => {
                 <div className="item">
                   <img src={dbsql} alt="Image" />
                 </div>
-              
                   <div className="item">
                   <img src={aws} alt="Image" />
                 </div>
+                  <div className="item">
+                  <img src={docker} alt="Image" />
+                </div>  
+                  <div className="item">
+                  <img src={github} alt="Image" />
+                </div>                
+                  <div className="item">
+                  <img src={vm} alt="Image" />
+                </div>     
               </Carousel>
             </div>
           </div>
