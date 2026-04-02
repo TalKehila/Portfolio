@@ -16,6 +16,8 @@ npm run deploy
 
 
 
-
+if sync doesnt work work 
 git reset --hard gh-pages
 git push origin gh-pages --force
+
+
