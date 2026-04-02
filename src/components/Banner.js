@@ -13,7 +13,7 @@ export const Banner = () => {
   const [text, setText] = useState('');
   const [delta, setDelta] = useState(300 - Math.random() * 100);
   const [index, setIndex] = useState(1);
-  const toRotate = ["Fullstack Developer"];
+  const toRotate = ["Software Engineer", "DevOps Engineer", "Fullstack Developer"];
   const period = 2000;
 
   useEffect(() => {
@@ -58,9 +58,9 @@ export const Banner = () => {
               {({ isVisible }) =>
               <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
                 <span className="tagline">Welcome to my Portfolio</span>
-                <h1>{`Hi! I'm Tal Kehila`} <span className="txt-rotate" dataPeriod="1000" data-rotate='[ "Backend", "Frontend", "Fullstack Developer" ]'><span className="wrap">{text}</span></span></h1>
+                <h1>{`Hi! I'm Tal Kehila`} <span className="txt-rotate" data-period="1000" data-rotate='[ "Software Engineer", "DevOps Engineer", "Fullstack " ]'><span className="wrap">{text}</span></span></h1>
                   <p>
-                    I'm a  Software Developer passionate about turning creative ideas into digital solutions. Skilled in teamwork, problem-solving, and self-learning, I thrive in collaborative environments and am motivated to drive positive change through innovative projects. My hands-on approach during my education has prepared me for real-world challenges.</p>
+                    I build things that actually work — from backend services to embedded systems. I like figuring out how pieces fit together, whether that's integrating APIs, setting up a CI/CD pipeline, or getting an ESP32 to talk to a cloud dashboard. Still learning, always curious.</p>
                   {/* <button onClick={() => console.log('connect')}>Let’s Connect <ArrowRightCircle size={25} /></button> */}
               </div>}
             </TrackVisibility>

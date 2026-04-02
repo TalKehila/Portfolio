@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Container, Row, Col, Tab, Nav } from "react-bootstrap";
 import { ProjectCard } from "./ProjectCard";
 import Todo from "../assets/img/note2.jpg";
@@ -5,29 +6,27 @@ import Box from "../assets/img/box.jpg";
 import Pet from "../assets/img/pet2.jpg";
 import Note from "../assets/img/mynote.jpg";
 import Library from "../assets/img/lib2.jpg";
-import news from "../assets/img/pkk.jpeg"
+import news from "../assets/img/pkk.jpeg";
 
-
-import 'animate.css';
-import TrackVisibility from 'react-on-screen';
+import "animate.css";
+import TrackVisibility from "react-on-screen";
 
 export const Projects = () => {
+  const [activeTab, setActiveTab] = useState("first");
 
   const projects = [
     {
       title: "Refrigeration & Chiller Monitoring System (mobile app and web) 2026",
-      description: "A refrigeration and chiller monitoring system that allows adding controllers, adjusting temperature settings, detecting faults, and sending real-time alerts via SMS and email. Includes a live dashboard displaying all system data and status in real time.",
+      description:
+        "A refrigeration and chiller monitoring system that allows adding controllers, adjusting temperature settings, detecting faults, and sending real-time alerts via SMS and email. Includes a live dashboard displaying all system data and status in real time.",
       imgUrl: Box,
     },
-
-
     {
       title: "C# Application with Docker and CI/CD (2025)",
-      description: "C# application containerized using Docker. Integrated with GitHub Actions, it provides automated CI/CD workflows for seamless deployment and continuous integration.",
+      description:
+        "C# application containerized using Docker. Integrated with GitHub Actions, it provides automated CI/CD workflows for seamless deployment and continuous integration.",
       imgUrl: Pet,
     },
-
-
     {
       title: "AWS multi region cloud application (2025-2026)",
       description: "Library management in WinForms",
@@ -37,25 +36,21 @@ export const Projects = () => {
         "Designed and provisioned infrastructure (VPC, networking, multi-AZ) using CloudFormation with focus on high availability",
         "Configured users, roles, and permissions via AWS Organizations, SSO, and IAM following least privilege principles",
         "Implemented storage using S3, databases, and NFS with versioning and immutability for resiliency",
-        "Set up monitoring and alerting with CloudWatch and SNS to track system health"
-      ]
+        "Set up monitoring and alerting with CloudWatch and SNS to track system health",
+      ],
     },
-
-
     {
       title: "HVAC Control System with NASA Protocol (2025)",
-      description: "A control system built on NASA's protocol, connected to a Raspberry Pi controller. The application manages HVAC components such as evaporators and ventilators across multiple rooms, providing centralized and efficient climate control.",
+      description:
+        "A control system built on NASA's protocol, connected to a Raspberry Pi controller. The application manages HVAC components such as evaporators and ventilators across multiple rooms, providing centralized and efficient climate control.",
       imgUrl: Todo,
     },
-
-
     {
       title: "thermostat touch screen ESP32 (2025)",
-      description: "A smart thermostat built with an ESP32 microcontroller, featuring a touch display using LVGL and GT911 touch controller, written in C/C++. The system allows real-time temperature monitoring and control through a responsive and intuitive user interface.",
+      description:
+        "A smart thermostat built with an ESP32 microcontroller, featuring a touch display using LVGL and GT911 touch controller, written in C/C++. The system allows real-time temperature monitoring and control through a responsive and intuitive user interface.",
       imgUrl: Note,
     },
-
-
     {
       title: "Personal news Fetcher",
       description: "Sending email to the user by the prefrences he likes",
@@ -63,18 +58,79 @@ export const Projects = () => {
     },
   ];
 
+  const tabTitles = {
+    first: "Projects",
+    second: "Technologies",
+    third: "Challenges",
+  };
+
+  const technologies = [
+    ".NET / .NET Core",
+    "C#",
+    "Python",
+    "JavaScript",
+    "TypeScript",
+    "Node.js",
+    "React",
+    "Angular",
+    "WPF",
+    "WinForms",
+    "MVC",
+    "REST API",
+    "JWT",
+    "Socket.IO",
+    "Docker",
+    "CI/CD (GitHub Actions)",
+    "AWS",
+    "Azure",
+    "MongoDB",
+    "SQL",
+    "Linux",
+    "Raspberry Pi",
+    "ESP32",
+    "LVGL",
+  ];
+
+  const challengePoints = [
+    {
+      title: "API and protocol mismatch",
+      text: "When services returned different payload shapes, I added a mapping layer between systems and standardized the contracts. That let frontend and backend evolve without breaking each other.",
+    },
+    {
+      title: "Real-time data from mixed sources",
+      text: "In monitoring flows, I combined event updates with API snapshots and added retries with fallback states. This kept the dashboard stable even when one source was delayed.",
+    },
+    {
+      title: "Authentication between services",
+      text: "I solved token and permission issues by aligning JWT handling and role checks across components, then validating the flow end-to-end in staging before release.",
+    },
+    {
+      title: "Deployment drift between environments",
+      text: "I used Docker and CI workflows to make builds reproducible and consistent. The same image and checks run in every environment, so integration bugs are caught earlier.",
+    },
+  ];
+
+  const sortedTechnologies = [...technologies].sort((a, b) => a.localeCompare(b));
+
   return (
     <section className="project" id="projects">
       <Container>
         <Row>
           <Col size={12}>
             <TrackVisibility>
-              {({ isVisible }) =>
+              {({ isVisible }) => (
                 <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
-                  <h2>Projects</h2>
-                  <p></p>
-                  <Tab.Container id="projects-tabs" defaultActiveKey="first">
-                    <Nav variant="pills" className="nav-pills mb-5 justify-content-center align-items-center" id="pills-tab">
+                  <h2>{tabTitles[activeTab]}</h2>
+                  <Tab.Container
+                    id="projects-tabs"
+                    defaultActiveKey="first"
+                    onSelect={(key) => setActiveTab(key || "first")}
+                  >
+                    <Nav
+                      variant="pills"
+                      className="nav-pills mb-5 justify-content-center align-items-center"
+                      id="pills-tab"
+                    >
                       <Nav.Item>
                         <Nav.Link eventKey="first">Project</Nav.Link>
                       </Nav.Item>
@@ -85,49 +141,48 @@ export const Projects = () => {
                         <Nav.Link eventKey="third">Challenges</Nav.Link>
                       </Nav.Item>
                     </Nav>
-                    <Tab.Content id="slideInUp" className={isVisible ? "animate__animated animate__slideInUp" : ""}>
+
+                    <Tab.Content
+                      id="slideInUp"
+                      className={isVisible ? "animate__animated animate__slideInUp" : ""}
+                    >
                       <Tab.Pane eventKey="first">
                         <Row>
-                          {
-                            projects.map((project, index) => {
-                              return (
-                                <ProjectCard
-                                  key={index}
-                                  {...project}
-                                />
-                              )
-                            })
-                          }
+                          {projects.map((project, index) => (
+                            <ProjectCard key={index} {...project} />
+                          ))}
                         </Row>
                       </Tab.Pane>
+
                       <Tab.Pane eventKey="second" className="tabpane">
-                        <p>
-                          * .NET with binary tree data storage and WPF for UI.
-                        </p>
-                        <p>
-                          * Angular, Node.js with JWT, and Socket.io  in the to-do project.
-                        </p>
-                        <p>
-                          * React for the note app.
-                        </p>
-                        <p>
-                          * WinForms in C# for  library system, employing OOP and file storage.
-                        </p>
-                        <p>
-                          *.NET Core with MVC and RESTful API for the pet web store.
-                        </p>
+                        <div className="tech-grid">
+                          {sortedTechnologies.map((tech) => (
+                            <div className="tech-chip" key={tech}>
+                              {tech}
+                            </div>
+                          ))}
+                        </div>
                       </Tab.Pane>
-                      <Tab.Pane eventKey="third">
-                        <p>Challenges: During each project there were other challenges that I was able to overcome and solve with the help of tolerance and troubleshooting, teamwork and a lot of self-learning.</p>
+
+                      <Tab.Pane eventKey="third" className="tabpane">
+                        <div className="challenge-list">
+                          {challengePoints.map((item) => (
+                            <article className="challenge-item" key={item.title}>
+                              <h3>{item.title}</h3>
+                              <p>{item.text}</p>
+                            </article>
+                          ))}
+                        </div>
                       </Tab.Pane>
                     </Tab.Content>
                   </Tab.Container>
-                </div>}
+                </div>
+              )}
             </TrackVisibility>
           </Col>
         </Row>
       </Container>
       {/* <img className="background-image-right" src={sh}></img> */}
     </section>
-  )
-}
+  );
+};

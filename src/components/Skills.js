@@ -14,6 +14,7 @@ import net from '../assets/img/dotnet.svg'
 import az from '../assets/img/az.svg'
 import mgg from '../assets/img/mongo.svg'
 import dbsql from '../assets/img/dbsql.svg'
+import aws from '../assets/img/aws.png'
 
 
 
@@ -51,7 +52,12 @@ export const Skills = () => {
           <div className="col-12">
             <div className="skill-bx wow zoomIn">
               <h2>Skills</h2>
-              <p>Experienced backend developer skilled in C#, .NET, Python, JavaScript, and Node.js.  in React, and Angular.<br></br> Expertise in Azure, SQL, NoSQL, and MongoDB. Continually learning networking, Linux, and virtualization (Kubernetes, Docker).</p>
+
+                
+              {/* <p>Experienced backend developer skilled in C#, .NET, Python, JavaScript, and Node.js.  in React, and Angular.<br></br> Expertise in Azure, SQL, NoSQL, and MongoDB. Continually learning networking, Linux, and virtualization (Kubernetes, Docker).</p> */}
+
+
+
               <Carousel responsive={responsive} infinite={true} className="owl-carousel owl-theme skill-slider">
                 <div className="item">
                   <img src={net} alt="Image" />
@@ -89,6 +95,10 @@ export const Skills = () => {
                 </div>
                 <div className="item">
                   <img src={dbsql} alt="Image" />
+                </div>
+              
+                  <div className="item">
+                  <img src={aws} alt="Image" />
                 </div>
               </Carousel>
             </div>

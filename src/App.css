@@ -460,6 +460,107 @@ color: white;
   border: 1px solid rgba(255, 255, 255, 0.5);
   border-radius: 0 55px 55px 0;
 }
+
+.project .tabpane {
+  padding: 8px 12px;
+}
+
+.project .tech-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  width: 100%;
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.project .tech-chip {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  padding: 12px 14px;
+  font-size: 15px;
+  font-weight: 500;
+  text-align: center;
+  color: #fff;
+}
+
+.project .challenge-list {
+  width: 100%;
+  max-width: 980px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.project .challenge-item {
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 14px;
+  padding: 16px;
+}
+
+.project .challenge-item h3 {
+  font-size: 18px;
+  margin-bottom: 8px;
+  color: #ffffff;
+}
+
+.project .challenge-item p {
+  width: 100%;
+  margin: 0;
+  text-align: left;
+  font-size: 15px;
+  line-height: 1.5;
+  color: #e5e7eb;
+}
+
+@media (max-width: 991px) {
+  .project .nav.nav-pills {
+    width: 100%;
+  }
+
+  .project .tech-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .project .challenge-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 767px) {
+  .project {
+    padding: 60px 0;
+  }
+
+  .project h2 {
+    font-size: 34px;
+  }
+
+  .project .nav.nav-pills .nav-link {
+    font-size: 15px;
+    padding: 13px 0;
+  }
+
+  .project .tech-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .project .tech-chip {
+    font-size: 14px;
+    padding: 10px 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .project .tech-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 .proj-imgbx {
   position: relative;
   border-radius: 30px;
