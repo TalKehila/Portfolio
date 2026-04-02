@@ -1,0 +1,151 @@
+.skill {
+  padding: 0 0 36px 0;
+  position: relative;
+}
+
+.skill-bx {
+  background: #5a6f7c;
+  border-radius: 52px;
+  text-align: center;
+  width: 90%;
+  max-width: 1320px;
+  padding: 48px 42px;
+  margin: -44px auto 0;
+  transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+}
+
+.skill-bx:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--elev-shadow);
+  border-color: rgba(125, 211, 252, 0.55);
+}
+
+.skill h2 {
+  font-size: 38px;
+  font-weight: 700;
+}
+
+.skill p {
+  color: white;
+  font-size: 16px;
+  letter-spacing: 0.8px;
+  line-height: 1.5em;
+  margin: 10px 0 48px 0;
+}
+
+.skill-slider {
+  width: 74%;
+  margin: 0 auto;
+  position: relative;
+}
+
+.skill .react-multiple-carousel__arrow--left {
+  left: -60px;
+}
+
+.skill .react-multiple-carousel__arrow--right {
+  right: -60px;
+}
+
+.skill-slider .item img {
+  width: 42%;
+  margin: 0 auto 10px auto;
+}
+
+.skill-slider .item img.aws-logo {
+  width: 34%;
+}
+
+.background-image-left {
+  top: 28%;
+  position: absolute;
+  bottom: 0;
+  width: 40%;
+  z-index: -4;
+}
+
+@media (max-width: 991px) {
+  .skill-bx {
+    border-radius: 40px;
+    width: 94%;
+    padding: 36px 26px;
+    margin-top: -26px;
+  }
+
+  .skill h2 {
+    font-size: 33px;
+  }
+
+  .skill-slider {
+    width: 82%;
+  }
+
+  .skill-slider .item img {
+    width: 52%;
+  }
+
+  .skill-slider .item img.aws-logo {
+    width: 42%;
+  }
+}
+
+@media (max-width: 576px) {
+  .skill {
+    padding-bottom: 18px;
+  }
+
+  .skill-bx {
+    border-radius: 22px;
+    width: 88%;
+    max-width: 420px;
+    padding: 18px 10px;
+    margin-top: -14px;
+  }
+
+  .skill h2 {
+    font-size: 24px;
+  }
+
+  .skill-slider {
+    width: 84%;
+  }
+
+  .skill-slider .item img {
+    width: 50%;
+  }
+
+  .skill-slider .item img.aws-logo {
+    width: 40%;
+  }
+
+  .skill .react-multiple-carousel__arrow--left {
+    left: -28px;
+  }
+
+  .skill .react-multiple-carousel__arrow--right {
+    right: -28px;
+  }
+}
+
+@media (max-width: 420px) {
+  .skill-bx {
+    width: 90%;
+    padding: 16px 8px;
+  }
+
+  .skill h2 {
+    font-size: 22px;
+  }
+
+  .skill-slider {
+    width: 82%;
+  }
+
+  .skill-slider .item img {
+    width: 46%;
+  }
+
+  .skill-slider .item img.aws-logo {
+    width: 37%;
+  }
+}

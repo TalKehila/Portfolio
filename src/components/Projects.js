@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Container, Row, Col, Tab, Nav } from "react-bootstrap";
 import { ProjectCard } from "./ProjectCard";
+import "./Projects.css";
 
 
 import ChillerAndRef from "../assets/img/ChillerAndRef.png";

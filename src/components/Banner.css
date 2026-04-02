@@ -1,0 +1,95 @@
+.banner {
+  margin-top: 0;
+  padding: 260px 0 100px 0;
+  background-position: top center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.banner .banner-content {
+  text-align: center;
+  margin: 0 auto;
+}
+
+.banner .tagline {
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  padding: 8px 10px;
+  background: linear-gradient(90.21deg, rgba(59, 51, 56, 0.5) -5.91%, rgba(114, 176, 221, 0.5) 111.58%);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  font-size: 20px;
+  margin-bottom: 16px;
+  display: inline-block;
+  box-shadow: 0 10px 30px rgba(2, 6, 23, 0.35);
+}
+
+.banner h1 {
+  font-size: 65px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  line-height: 1;
+  margin-bottom: 20px;
+  display: block;
+}
+
+.banner .banner-name {
+  font-size: clamp(2.35rem, 4.6vw, 4rem);
+  font-weight: 800;
+  letter-spacing: 0.4px;
+  margin-bottom: 10px;
+  text-shadow: 0 10px 30px rgba(56, 189, 248, 0.28);
+}
+
+.banner .banner-role-line {
+  margin: 0 auto 18px;
+  min-height: 46px;
+  font-size: clamp(1.25rem, 2.6vw, 2rem);
+  font-weight: 600;
+  color: #dbeafe;
+}
+
+.banner p {
+  color: white;
+  font-size: 18px;
+  letter-spacing: 0.8px;
+  line-height: 1.5em;
+  width: 100%;
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.banner img {
+  border-radius: 50%;
+  width: 300px;
+  height: 400px;
+}
+
+.txt-rotate > .wrap {
+  border-right: 0.08em solid #565454;
+}
+
+@media (max-width: 991px) {
+  .banner .banner-role-line {
+    min-height: 40px;
+  }
+}
+
+@media (max-width: 767px) {
+  .banner {
+    padding: 170px 0 80px 0;
+  }
+
+  .banner .banner-name {
+    font-size: clamp(2rem, 10vw, 2.8rem);
+  }
+
+  .banner .banner-role-line {
+    font-size: clamp(1.1rem, 6vw, 1.45rem);
+  }
+}
+
+@media (max-width: 480px) {
+  .banner {
+    padding: 145px 0 72px 0;
+  }
+}

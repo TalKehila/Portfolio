@@ -1,94 +1,65 @@
 import { useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import contactImg from "../assets/img/contact-img.svg";
-import con from "../assets/img/r.svg";
+import gmail from "../assets/img/gmail.svg";
+import navIcon1 from "../assets/img/nav-icon1.svg";
+import gitIcon from "../assets/img/git-icon.svg";
+import { motion } from "framer-motion";
+import "./Contact.css";
 
 import 'animate.css';
-import TrackVisibility from 'react-on-screen';
 
 export const Contact = () => {
-  const formInitialDetails = {
-    firstName: '',
-    lastName: '',
-    email: '',
-    phone: '',
-    message: ''
-  }
-  const [formDetails, setFormDetails] = useState(formInitialDetails);
-  const [buttonText, setButtonText] = useState('Send');
-  const [status, setStatus] = useState({});
+  const [copied, setCopied] = useState(false);
 
-  const onFormUpdate = (category, value) => {
-      setFormDetails({
-        ...formDetails,
-        [category]: value
-      })
-  }
+  const email = "tal.kehila10@gmail.com";
 
-  const handleSubmit = async (e) => {
+  const handleGmailClick = async (e) => {
     e.preventDefault();
-    setButtonText("Sending...");
-    let response = await fetch("http://localhost:5000/contact", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json;charset=utf-8",
-      },
-      body: JSON.stringify(formDetails),
-    });
-    setButtonText("Send");
-    let result = await response.json();
-    setFormDetails(formInitialDetails);
-    if (result.code == 200) {
-      setStatus({ succes: true, message: 'Message sent successfully'});
-    } else {
-      setStatus({ succes: false, message: 'Something went wrong, please try again later.'});
+
+    try {
+      await navigator.clipboard.writeText(email);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 1800);
+    } catch {
+      setCopied(false);
     }
+
+    const gmailCompose = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(email)}`;
+    window.open(gmailCompose, "_blank", "noopener,noreferrer");
   };
 
   return (
-    <section className="contact" id="connect">
+    <section className="contact" id="connect" data-aos="fade-up">
       <Container>
-        <Row className="align-items-center">
-          <Col size={12} md={6}>
-            <TrackVisibility>
-              {({ isVisible }) =>
-                <img className={isVisible ? "animate__animated animate__zoomIn" : ""} src={con} alt="Contact Us"/>
-              }
-            </TrackVisibility>
-          </Col>
-          <Col size={12} md={6}>
-            <TrackVisibility>
-              {({ isVisible }) =>
-                <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
-                <h2>Keep In Touch</h2>
-                <form onSubmit={handleSubmit}>
-                  <Row>
-                    <Col size={12} sm={6} className="px-1">
-                      <input type="text" value={formDetails.firstName} placeholder="First Name" onChange={(e) => onFormUpdate('firstName', e.target.value)} />
-                    </Col>
-                    <Col size={12} sm={6} className="px-1">
-                      <input type="text" value={formDetails.lasttName} placeholder="Last Name" onChange={(e) => onFormUpdate('lastName', e.target.value)}/>
-                    </Col>
-                    <Col size={12} sm={6} className="px-1">
-                      <input type="email" value={formDetails.email} placeholder="Email Address" onChange={(e) => onFormUpdate('email', e.target.value)} />
-                    </Col>
-                    <Col size={12} sm={6} className="px-1">
-                      <input type="tel" value={formDetails.phone} placeholder="Phone No." onChange={(e) => onFormUpdate('phone', e.target.value)}/>
-                    </Col>
-                    <Col size={12} className="px-1">
-                      <textarea rows="6" value={formDetails.message} placeholder="Message" onChange={(e) => onFormUpdate('message', e.target.value)}></textarea>
-                      <button type="submit"><span>{buttonText}</span></button>
-                    </Col>
-                    {
-                      status.message &&
-                      <Col>
-                        <p className={status.success === false ? "danger" : "success"}>{status.message}</p>
-                      </Col>
-                    }
-                  </Row>
-                </form>
-              </div>}
-            </TrackVisibility>
+        <Row className="justify-content-center align-items-center">
+          <Col md={10} lg={8}>
+            <motion.div
+              className="contact-card"
+              initial={{ opacity: 0, y: 28 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.55 }}
+            >
+              <span className="contact-kicker">Let's Work Together</span>
+              <h2>Contact</h2>
+              <p>
+                Available for software engineering, DevOps, and embedded projects.
+                The fastest way to reach me is by email.
+              </p>
+
+              <div className="contact-social">
+                <a className="contact-icon-link" href="#gmail" onClick={handleGmailClick} aria-label="Open Gmail compose and copy email">
+                  <img src={gmail} alt="Gmail" />
+                </a>
+                <a className="contact-icon-link" href="https://www.linkedin.com/in/tal-kehila-581166232/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                  <img src={navIcon1} alt="LinkedIn" />
+                </a>
+                <a className="contact-icon-link" href="https://github.com/TalKehila" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                  <img src={gitIcon} alt="GitHub" />
+                </a>
+              </div>
+              {copied && <p className="contact-copied">Email copied</p>}
+            </motion.div>
           </Col>
         </Row>
       </Container>
