@@ -1,36 +1,50 @@
 import { useState } from "react";
 import { Container, Row, Col, Tab, Nav } from "react-bootstrap";
 import { ProjectCard } from "./ProjectCard";
-import Todo from "../assets/img/note2.jpg";
-import Box from "../assets/img/box.jpg";
-import Pet from "../assets/img/pet2.jpg";
-import Note from "../assets/img/mynote.jpg";
-import Library from "../assets/img/lib2.jpg";
-import news from "../assets/img/pkk.jpeg";
+
+
+import ChillerAndRef from "../assets/img/ChillerAndRef.png";
+import DockerApp from "../assets/img/DockerApp.png";
+import AWSMulitRegion from "../assets/img/AWSMulitRegion.png";
+import HVAC from "../assets/img/HVAC.png";
+import Thermostate from "../assets/img/Thermostate.png";
+import PersonalNewFetcer from "../assets/img/PersonalNewFetcer.png";
+
 
 import "animate.css";
-import TrackVisibility from "react-on-screen";
 
 export const Projects = () => {
   const [activeTab, setActiveTab] = useState("first");
 
   const projects = [
     {
-      title: "Refrigeration & Chiller Monitoring System (mobile app and web) 2026",
-      description:
-        "A refrigeration and chiller monitoring system that allows adding controllers, adjusting temperature settings, detecting faults, and sending real-time alerts via SMS and email. Includes a live dashboard displaying all system data and status in real time.",
-      imgUrl: Box,
+      title: "Refrigeration & Chiller Monitoring System (mobile app and web)",
+      description: "Refrigeration and chiller monitoring platform.",
+      imgUrl: ChillerAndRef,
+      bullets: [
+        "Add and manage multiple controllers in one system",
+        "Set and update temperature values remotely",
+        "Detect faults and trigger alerts in real time",
+        "Send notifications by SMS and email",
+        "Show live status and telemetry in a web and mobile dashboard",
+      ],
     },
     {
-      title: "C# Application with Docker and CI/CD (2025)",
-      description:
-        "C# application containerized using Docker. Integrated with GitHub Actions, it provides automated CI/CD workflows for seamless deployment and continuous integration.",
-      imgUrl: Pet,
+      title: "C# Application with Docker and CI/CD",
+      description: "C# app deployment pipeline with Docker and GitHub Actions.",
+      imgUrl: DockerApp,
+      bullets: [
+        "Built the app in C# and packaged it with Docker",
+        "Created GitHub Actions workflow for automatic build and test",
+        "Pushed consistent Docker images for each update",
+        "Reduced manual deployment work with one pipeline",
+        "Made releases faster and easier to maintain",
+      ],
     },
     {
-      title: "AWS multi region cloud application (2025-2026)",
+      title: "AWS multi region cloud application",
       description: "Library management in WinForms",
-      imgUrl: Library,
+      imgUrl: AWSMulitRegion,
       bullets: [
         "Built a multi-region AWS architecture with independent game instances per region and failover-based traffic switching using EC2 and Fargate",
         "Designed and provisioned infrastructure (VPC, networking, multi-AZ) using CloudFormation with focus on high availability",
@@ -40,21 +54,40 @@ export const Projects = () => {
       ],
     },
     {
-      title: "HVAC Control System with NASA Protocol (2025)",
-      description:
-        "A control system built on NASA's protocol, connected to a Raspberry Pi controller. The application manages HVAC components such as evaporators and ventilators across multiple rooms, providing centralized and efficient climate control.",
-      imgUrl: Todo,
+      title: "HVAC Control System",
+      description: "HVAC control app with Raspberry Pi integration.",
+      imgUrl:HVAC,
+      bullets: [
+        "Built around NASA communication protocol",
+        "Connected the system to a Raspberry Pi controller",
+        "Managed HVAC devices like evaporators and ventilators",
+        "Controlled multiple rooms from one interface",
+        "Improved stability and day-to-day climate control operations",
+      ],
     },
     {
-      title: "thermostat touch screen ESP32 (2025)",
-      description:
-        "A smart thermostat built with an ESP32 microcontroller, featuring a touch display using LVGL and GT911 touch controller, written in C/C++. The system allows real-time temperature monitoring and control through a responsive and intuitive user interface.",
-      imgUrl: Note,
+      title: "thermostat touch screen ESP32",
+      description: "Smart thermostat with touch interface on ESP32.",
+      imgUrl:Thermostate,
+      bullets: [
+        "Built the thermostat on ESP32 in C/C++",
+        "Used LVGL for the on-screen user interface",
+        "Integrated GT911 touch controller for touch input",
+        "Displayed real-time temperature data",
+        "Enabled quick and responsive temperature control",
+      ],
     },
     {
       title: "Personal news Fetcher",
-      description: "Sending email to the user by the prefrences he likes",
-      imgUrl: news,
+      description: "Personalized news email service using microservices architecture.",
+      imgUrl:PersonalNewFetcer,
+      bullets: [
+        "Built with .NET using three microservices",
+        "Used RabbitMQ and Dapr for service communication",
+        "Users register and select their preferred news topics",
+        "System collects fresh updates every day",
+        "Sends each user a daily email with relevant news",
+      ],
     },
   ];
 
@@ -117,9 +150,7 @@ export const Projects = () => {
       <Container>
         <Row>
           <Col size={12}>
-            <TrackVisibility>
-              {({ isVisible }) => (
-                <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
+                <div className="animate__animated animate__fadeIn">
                   <h2>{tabTitles[activeTab]}</h2>
                   <Tab.Container
                     id="projects-tabs"
@@ -144,7 +175,7 @@ export const Projects = () => {
 
                     <Tab.Content
                       id="slideInUp"
-                      className={isVisible ? "animate__animated animate__slideInUp" : ""}
+                      className="animate__animated animate__slideInUp"
                     >
                       <Tab.Pane eventKey="first">
                         <Row>
@@ -177,8 +208,6 @@ export const Projects = () => {
                     </Tab.Content>
                   </Tab.Container>
                 </div>
-              )}
-            </TrackVisibility>
           </Col>
         </Row>
       </Container>

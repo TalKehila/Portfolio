@@ -1,11 +1,6 @@
 import { useState, useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
-
-import headerImg from "../assets/img/p.png";
-
-import { ArrowRightCircle } from 'react-bootstrap-icons';
 import 'animate.css';
-import TrackVisibility from 'react-on-screen';
 
 export const Banner = () => {
   const [loopNum, setLoopNum] = useState(0);
@@ -52,26 +47,14 @@ export const Banner = () => {
   return (
     <section className="banner" id="home">
       <Container>
-        <Row className="aligh-items-center">
-          <Col xs={12} md={6} xl={7}>
-            <TrackVisibility>
-              {({ isVisible }) =>
-              <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
+        <Row className="align-items-center justify-content-center">
+          <Col xs={12} md={10} xl={8}>
+              <div className="banner-content animate__animated animate__fadeIn">
                 <span className="tagline">Welcome to my Portfolio</span>
                 <h1>{`Hi! I'm Tal Kehila`} <span className="txt-rotate" data-period="1000" data-rotate='[ "Software Engineer", "DevOps Engineer", "Fullstack " ]'><span className="wrap">{text}</span></span></h1>
                   <p>
                     I build things that actually work — from backend services to embedded systems. I like figuring out how pieces fit together, whether that's integrating APIs, setting up a CI/CD pipeline, or getting an ESP32 to talk to a cloud dashboard. Still learning, always curious.</p>
-                  {/* <button onClick={() => console.log('connect')}>Let’s Connect <ArrowRightCircle size={25} /></button> */}
-              </div>}
-            </TrackVisibility>
-          </Col>
-          <Col xs={12} md={6} xl={5}>
-            <TrackVisibility>
-              {({ isVisible }) =>
-                <div className={isVisible ? "animate__animated animate__zoomIn" : ""}>
-                  <img src={headerImg} alt="Header Img"/>
-                </div>}
-            </TrackVisibility>
+              </div>
           </Col>
         </Row>
       </Container>
