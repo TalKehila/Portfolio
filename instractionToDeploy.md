@@ -21,3 +21,23 @@ git reset --hard gh-pages
 git push origin gh-pages --force
 
 
+
+
+
+
+---
+
+## הרצה לוקאלית לפני PUSH
+
+⚠️ חובה `cd personal-portfolio` קודם. אחרת → `ENOENT package.json`.
+
+```bash
+cd personal-portfolio
+npm install      # פעם ראשונה בלבד
+npm start        # http://localhost:3000
+npm run build    # בדיקה שה-build עובר
+```
+
+**לפני push:** אין `console.error`, אין horizontal scroll, `npm run build` עובר.
+
+פורט תפוס: `set PORT=3001 && npm start`

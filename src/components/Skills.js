@@ -2,8 +2,6 @@
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import "./Skills.css";
-import arrow1 from "../assets/img/arrow1.svg";
-import arrow2 from "../assets/img/arrow2.svg";
 import py from '../assets/img/py.svg'
 import cs from '../assets/img/cs.svg'
 import linux from '../assets/img/linux.svg'
@@ -20,106 +18,72 @@ import github from '../assets/img/github.svg'
 import docker from '../assets/img/docker.svg'
 import vm from '../assets/img/vm.svg'
 
-
-
-
-
-
-
-
-
-
-
 export const Skills = () => {
   const responsive = {
-    superLargeDesktop: {
-      // the naming can be any, depends on you.
-      breakpoint: { max: 4000, min: 3000 },
-      items: 5
-    },
-    desktop: {
-      breakpoint: { max: 3000, min: 1024 },
-      items: 3
-    },
-    tablet: {
-      breakpoint: { max: 1024, min: 464 },
-      items: 2
-    },
-    mobile: {
-      breakpoint: { max: 464, min: 0 },
-      items: 1
-    }
+    superLargeDesktop: { breakpoint: { max: 4000, min: 3000 }, items: 6 },
+    desktop: { breakpoint: { max: 3000, min: 1024 }, items: 5 },
+    tablet: { breakpoint: { max: 1024, min: 464 }, items: 3 },
+    mobile: { breakpoint: { max: 464, min: 0 }, items: 2 }
   };
+
+  const items = [
+    { src: net, name: ".NET" },
+    { src: py, name: "Python" },
+    { src: cs, name: "C#" },
+    { src: js, name: "JavaScript" },
+    { src: linux, name: "Linux" },
+    { src: react, name: "React" },
+    { src: ang, name: "Angular" },
+    { src: node, name: "Node.js" },
+    { src: az, name: "Azure" },
+    { src: mgg, name: "MongoDB" },
+    { src: dbsql, name: "SQL" },
+    { src: aws, name: "AWS" },
+    { src: docker, name: "Docker" },
+    { src: github, name: "GitHub" },
+    { src: vm, name: "Virtualization" },
+  ];
 
   return (
     <section className="skill" id="skills">
       <div className="container">
         <div className="row">
           <div className="col-12">
-            <div className="skill-bx wow zoomIn">
-              <h2>Skills</h2>
+            <div className="skill-bx" data-aos="fade-up">
+              <div className="skill-head">
+                <span className="section-kicker">My Stack</span>
+                <h2 className="section-title">Skills &amp; Tools</h2>
+                <p className="skill-sub">
+                  The tech I reach for across backend, cloud, and embedded work.
+                </p>
+              </div>
 
-                
-              {/* <p>Experienced backend developer skilled in C#, .NET, Python, JavaScript, and Node.js.  in React, and Angular.<br></br> Expertise in Azure, SQL, NoSQL, and MongoDB. Continually learning networking, Linux, and virtualization (Kubernetes, Docker).</p> */}
-
-
-
-              <Carousel responsive={responsive} infinite={true} className="owl-carousel owl-theme skill-slider">
-                <div className="item">
-                  <img src={net} alt="Image" />
-                 
-                </div>
-                <div className="item">
-                  <img src={py} alt="Image" />
-                  {/* <h5>Cloud Servies & Data Bases</h5> */}
-                </div>
-                <div className="item">
-                  <img src={cs} alt="Image" />
-                  {/* <h5>Frontend Development</h5> */}
-                </div>
-                <div className="item">
-                  <img src={js} alt="Image" />
-                  {/* <h5>Web Development</h5> */}
-                </div>
-                <div className="item">
-                  <img src={linux} alt="Image" />
-                </div>
-                <div className="item">
-                  <img src={react} alt="Image" />
-                </div>
-                <div className="item">
-                  <img src={ang} alt="Image" />
-                </div>
-                <div className="item">
-                  <img src={node} alt="Image" />
-                </div>
-                <div className="item">
-                  <img src={az} alt="Image" />
-                </div>
-                <div className="item">
-                  <img src={mgg} alt="Image" />
-                </div>
-                <div className="item">
-                  <img src={dbsql} alt="Image" />
-                </div>
-                  <div className="item">
-                  <img src={aws} alt="Image" />
-                </div>
-                  <div className="item">
-                  <img src={docker} alt="Image" />
-                </div>  
-                  <div className="item">
-                  <img src={github} alt="Image" />
-                </div>                
-                  <div className="item">
-                  <img src={vm} alt="Image" />
-                </div>     
+              <Carousel
+                responsive={responsive}
+                infinite={true}
+                autoPlay={true}
+                autoPlaySpeed={2200}
+                transitionDuration={700}
+                customTransition="transform 700ms cubic-bezier(0.16, 1, 0.3, 1)"
+                arrows={true}
+                swipeable={true}
+                draggable={true}
+                className="owl-carousel owl-theme skill-slider"
+              >
+                {items.map((it) => (
+                  <div className="item" key={it.name}>
+                    <div className="skill-tile">
+                      <div className="skill-tile-glow"></div>
+                      <img src={it.src} alt={it.name} />
+                      <span className="skill-tile-name">{it.name}</span>
+                    </div>
+                  </div>
+                ))}
               </Carousel>
             </div>
           </div>
         </div>
       </div>
-      {/* <img className="background-image-left" src={colorSharp} alt="Image" /> */}
     </section>
   )
 }

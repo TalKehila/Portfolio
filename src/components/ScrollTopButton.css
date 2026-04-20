@@ -1,33 +1,53 @@
 .scroll-top-btn {
   position: fixed;
-  right: 18px;
-  bottom: 18px;
-  width: 52px;
-  height: 52px;
+  right: 22px;
+  bottom: 22px;
+  width: 56px;
+  height: 56px;
   border-radius: 50%;
-  border: 1px solid rgba(255, 255, 255, 0.45);
-  background: linear-gradient(145deg, rgba(15, 23, 42, 0.9), rgba(30, 41, 59, 0.85));
-  color: #e2e8f0;
+  border: 1px solid var(--glass-stroke);
+  background: linear-gradient(135deg, rgba(14, 18, 38, 0.85), rgba(8, 10, 24, 0.92));
+  color: #fff;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   font-size: 18px;
   z-index: 10000;
-  box-shadow: 0 14px 30px rgba(2, 6, 23, 0.45);
-  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  overflow: hidden;
+  isolation: isolate;
+  transition: transform 0.5s var(--ease-snap), box-shadow 0.5s var(--ease-out-expo);
+}
+
+.scroll-top-btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: var(--grad-neon);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  opacity: 0.6;
+  z-index: -1;
 }
 
 .scroll-top-btn:hover {
-  transform: translateY(-4px);
-  border-color: rgba(125, 211, 252, 0.75);
-  box-shadow: 0 18px 34px rgba(2, 6, 23, 0.55);
+  transform: translateY(-4px) rotate(-12deg) scale(1.06);
+  box-shadow: 0 22px 44px rgba(168, 85, 247, 0.45);
+}
+
+.scroll-top-btn svg {
+  transition: transform 0.5s var(--ease-snap);
+}
+
+.scroll-top-btn:hover svg {
+  transform: translateY(-3px);
 }
 
 @media (max-width: 767px) {
-  .scroll-top-btn {
-    width: 46px;
-    height: 46px;
-    right: 12px;
-    bottom: 12px;
-  }
+  .scroll-top-btn { width: 48px; height: 48px; right: 14px; bottom: 14px; }
 }

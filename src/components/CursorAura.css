@@ -11,23 +11,25 @@
   top: 0;
   left: 0;
   opacity: 0;
-  transition: opacity 0.2s ease, transform 0.2s ease, width 0.2s ease, height 0.2s ease;
+  transition: opacity 0.25s var(--ease-out-expo), width 0.4s var(--ease-snap), height 0.4s var(--ease-snap), background 0.4s var(--ease-out-expo);
   will-change: transform;
+  mix-blend-mode: screen;
 }
 
 .cursor-aura {
-  width: 28px;
-  height: 28px;
+  width: 34px;
+  height: 34px;
   border-radius: 999px;
-  background: radial-gradient(circle, rgba(125, 211, 252, 0.38) 0%, rgba(56, 189, 248, 0.08) 65%, rgba(56, 189, 248, 0) 100%);
-  filter: blur(0.3px);
+  background: radial-gradient(circle, rgba(168, 85, 247, 0.55) 0%, rgba(34, 211, 238, 0.2) 55%, transparent 100%);
+  filter: blur(1px);
 }
 
 .cursor-dot {
   width: 6px;
   height: 6px;
   border-radius: 999px;
-  background: rgba(224, 242, 254, 0.95);
+  background: #fff;
+  box-shadow: 0 0 10px rgba(34, 211, 238, 0.9);
 }
 
 body.cursor-visible .cursor-aura,
@@ -36,20 +38,15 @@ body.cursor-visible .cursor-dot {
 }
 
 body.cursor-hover .cursor-aura {
-  width: 40px;
-  height: 40px;
-  background: radial-gradient(circle, rgba(125, 211, 252, 0.5) 0%, rgba(56, 189, 248, 0.12) 70%, rgba(56, 189, 248, 0) 100%);
+  width: 56px;
+  height: 56px;
+  background: radial-gradient(circle, rgba(236, 72, 153, 0.55) 0%, rgba(168, 85, 247, 0.25) 55%, transparent 100%);
 }
 
 @media (hover: none), (pointer: coarse), (max-width: 992px) {
-  .cursor-aura-layer {
-    display: none;
-  }
+  .cursor-aura-layer { display: none; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .cursor-aura,
-  .cursor-dot {
-    transition: none;
-  }
+  .cursor-aura, .cursor-dot { transition: none; }
 }

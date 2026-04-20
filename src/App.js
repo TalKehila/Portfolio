@@ -12,18 +12,23 @@ import { Contact } from "./components/Contact";
 import { Footer } from "./components/Footer";
 import { ScrollTopButton } from "./components/ScrollTopButton";
 import { CursorAura } from "./components/CursorAura";
+import { OrbsBackground } from "./components/OrbsBackground";
+import { ScrollProgress } from "./components/ScrollProgress";
 
 function App() {
   useEffect(() => {
     AOS.init({
-      duration: 850,
+      duration: 900,
       once: true,
       easing: 'ease-out-cubic',
+      offset: 60,
     });
   }, []);
 
   return (
     <div className="App">
+      <OrbsBackground />
+      <ScrollProgress />
       <CursorAura />
       <NavBar />
       <Banner />
